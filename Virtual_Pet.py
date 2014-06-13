@@ -1,3 +1,4 @@
+from time import strftime
 class VirtualPet:
     """ a representation of a pet """
     def __init__(self,name):
@@ -19,6 +20,7 @@ class VirtualPet:
         elif food == "Cookie Dough":
             self.hunger = self.hunger + 6
             self.energy = self.energy - 2
+    
         
 def main():
     name = input("Please enter a name for your pet: ")
@@ -28,5 +30,16 @@ def main():
     pet_one.feed("Cake")
     print(pet_one.energy)
 
+def time():
+    previous_time = (int(strftime("%M"))*60) + (int(strftime("%S")))
+    return previous_time                                           
+                                               
+
+def hunger(previous_time):
+    current_time = (int(strftime("%M"))*60) + (int(strftime("%S")))
+    if current_time > previous_time:
+        hunger = current_time - previous_time
+        print(hunger)
+    
 if __name__ == "__main__":
     main()
