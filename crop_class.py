@@ -45,6 +45,10 @@ def auto_grow(crop, days):
 def manual_grow(crop):
     valid = False
     while not valid:
+<<<<<<< HEAD
+=======
+        
+>>>>>>> PyQt and crop class
         try:
             light = int(input("Please enter a light value (1-10): "))
             if 1 <= light <=10:
