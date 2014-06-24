@@ -5,8 +5,8 @@ from animal_class import *
 class Sheep(Animal):
     """a sheep"""
 
-    def __init__(self):
-        super().__init__(10,6,7) #growth 1, ln 3, wn 6
+    def __init__(self,name):
+        super().__init__(10,6,7,name) #growth 1, ln 3, wn 6
         self._type = "Sheep"
 
     def grow(self,food,water):
@@ -21,7 +21,8 @@ class Sheep(Animal):
             self._update_status()
             
 def main():
-    sheep_animal = Sheep()
+    name = enter_name()
+    sheep_animal = Sheep(name)
     print(sheep_animal.report())
     manual_grow(sheep_animal)
     print(sheep_animal.report())

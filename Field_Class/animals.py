@@ -25,12 +25,13 @@ def select_option():
     return choice
 
 def create_animal():
+    name = enter_name()
     display_menu()
     choice = select_option()
     if choice == 1:
-        new_animal = Sheep()
+        new_animal = Sheep(name)
     elif choice == 2:
-        new_animal = Cow()
+        new_animal = Cow(name)
     return new_animal
 
 def name_animal(animal):

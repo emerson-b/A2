@@ -2,7 +2,7 @@ import random
 class Animal:
     """A generic animal animal"""
 
-    def __init__(self,growth_rate, food_need, water_need):
+    def __init__(self,growth_rate, food_need, water_need, name):
 
         self._weight = 20
         self._days_growing = 0
@@ -10,8 +10,8 @@ class Animal:
         self._food_need = food_need
         self._water_need = water_need
         self._status = "Baby"
-        self._type = "Generic"
-        self._name = None
+        self._type = "Animal"
+        self._name = name
         
 
     def needs(self):
@@ -110,10 +110,20 @@ def manage_animal(animal):
             print()
         print("Thank you for using the animal management program")
 
-
+def enter_name():
+    valid = False
+    while not valid:
+        name = input("Please enter a name for this animal: ")
+        if name.isalpha() == True:
+            valid = True
+        else:
+            print("Please enter a valid name")
+    print()
+    return name
 
 def main():
-    new_animal = Animal(1,4,3)
+    name = enter_name()
+    new_animal = Animal(1,4,3,name)
     manage_animal(new_animal)
 
 
